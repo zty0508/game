@@ -2,7 +2,7 @@
 
 #randomImage, input, button, p, h1{
     display: block;  /* 讓 img 變成區塊元素 */
-    margin: 20px auto;  /* 上下 20px，左右 auto 讓它置中 */
+    margin: 10px auto;  /* 上下 20px，左右 auto 讓它置中 */
     text-align:center;
 }
 @media screen and (max-width: 768px){
