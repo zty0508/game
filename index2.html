@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <img id="image" src="" height="500px">
+    <h1>
+        恭喜通關，可以到。。。領取獎品喔～
+    </h1>
+
+    <script>
+        var image = ["p/S__48283715.jpg", "p/S__48283716.jpg"];
+        var index = 0;
+        
+        setInterval(function() {
+            document.getElementById("image").src = image[index];
+            index = (index + 1) % image.length;//取餘數
+        }, 500);
+       
+
+    </script>
+</body>
+</html>

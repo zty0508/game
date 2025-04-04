@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小遊戲</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>找找看這是哪個作品的圖片～</h1>
+    <img id="randomImage" src="" width="500px">
+    <input type="text" id="userInput" placeholder="輸入圖片名稱">
+    <button onclick="checkAnswer()">確認</button>
+    
+
+<script>
+    var images = [
+        { name : "這樣有像mean girl嗎？", src : "photo/1.jpg" },
+        { name : "夜晚的廊道", src : "photo/2.jpg" },
+        { name : "Flashlight", src : "photo/3.jpg" },
+        { name : "週六加課的小確幸", src : "photo/4.jpg" },
+        { name : "雞不可失", src : "photo/5.jpg" },
+        { name : "柔焦濾鏡", src : "photo/6.jpg" },
+        { name : "傍晚的兩隻貓", src : "photo/7.jpg" },
+        { name : "是青春？是我們", src : "photo/8.jpg" },
+        { name : "貓和池塘", src : "photo/9.jpg" },
+        { name : "櫻花和貓", src : "photo/10.jpg" },
+        { name : "Flaming the noon", src : "photo/11.jpg" },
+        { name : "彰女的吉祥物", src : "photo/12.jpg" },
+        { name : "操場與狗", src : "photo/13.jpg" },
+        { name : "黃昏的球場", src : "photo/14.jpg" },
+        { name : "一天的傍晚", src : "photo/15.jpg" },
+        { name : "紅樓", src : "photo/16.jpg" },
+        { name : "他們打球我打報告", src : "photo/17.jpg" },
+        { name : "彰女炒雞蛋", src : "photo/18.jpg" },
+        { name : "坐在角落", src : "photo/19.jpg" },
+        { name : "貓和水池", src : "photo/20.jpg" },
+        { name : ["Memory","memory"], src : "photo/21.jpg" },
+        { name : "314窗外的四季樹", src : "photo/22.jpg" },
+        { name : "蝴蝶，蝴蝶，氈的真美麗", src : "photo/23.jpg" },
+        { name : "黃昏操場的守護者", src : "photo/24.jpg" },
+        { name : "被框來的", src : "photo/25.jpg" },
+        { name : "沐心亭", src : "photo/26.jpg" },
+        { name : "還我漂亮的操場！", src : "photo/27.jpg" },
+        { name : "卡在樹上的排球", src : "photo/28.jpg" },
+        { name : ["Seize the day","seize the day"], src : "photo/29.jpg" },
+        { name : "時光迴廊", src : "photo/30.jpg" },
+        { name : "櫻石巧克力", src : "photo/31.jpg" },
+        { name : "阿罵眼中的黑貓", src : "photo/32.jpg" },
+        { name : "大榕樹", src : "photo/33.jpg" },
+        { name : "最有回憶的椅子", src : "photo/34.jpg" },
+    ];
+        var randomIndex = Math.floor(Math.random() * images.length);
+        document.getElementById("randomImage").src = images[randomIndex].src;
+    
+    function checkAnswer() {
+        var userInput = document.getElementById("userInput").value.trim();
+        var inputElement = document.getElementById("userInput"); 
+        if (Array.isArray(images[randomIndex].name)) {
+        if(images[randomIndex].name.includes(userInput)){
+            window.confirm("回答正確~下一頁可以兌換獎品喔～");
+            window.location.href = "index2.html";
+        }
+        else{
+            window.confirm("答錯了，再多想想？");
+        }
+         }   
+        else{
+            if(userInput===images[randomIndex].name){
+            window.confirm("回答正確~下一頁可以兌換獎品喔～");
+            window.location.href = "index2.html";
+        }
+        else{
+            window.confirm("答錯了，再多想想？");
+        }
+        }
+    
+        inputElement.value="";
+
+    }
+
+    document.getElementById("userInput").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        checkAnswer();
+    }
+});
+    
+</script>
+
+
+</body>
+</html>
